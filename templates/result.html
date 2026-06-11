@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>ResumeIQ Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="left-panel">
+
+        <h2 class="ats-title">
+            ATS SCORE
+        </h2>
+
+        <div class="score-card">
+            {{ score }}/100
+        </div>
+
+        <p class="rating">
+
+        {% if score|int >= 80 %}
+            Excellent
+        {% elif score|int >= 60 %}
+            Good
+        {% elif score|int >= 40 %}
+            Average
+        {% else %}
+            Needs Improvement
+        {% endif %}
+
+        </p>
+
+        <a href="/" class="new-analysis-btn">
+            New Analysis
+        </a>
+
+    </div>
+
+    <div class="right-panel">
+
+        <h1>Resume Dashboard</h1>
+
+        <div class="dashboard-card">
+
+            <h2>💪 Strengths</h2>
+
+            <pre>{{ strengths }}</pre>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h2>⚠ Missing Skills</h2>
+
+            <pre>{{ missing_skills }}</pre>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h2>🚀 Improvements</h2>
+
+            <pre>{{ improvements }}</pre>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h2>📝 Final Verdict</h2>
+
+            <pre>{{ verdict }}</pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

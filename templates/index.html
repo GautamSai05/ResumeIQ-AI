@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeIQ AI - ATS Resume Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="glass-card">
+
+            <h1>🚀 ResumeIQ AI</h1>
+            <p>
+                AI-Powered ATS Resume Analyzer & Career Assistant
+            </p>
+            <p>
+                Upload your resume and get an AI-powered ATS analysis
+            </p>
+
+            <form action="/analyze"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <input
+                    type="file"
+                    name="resume"
+                    required>
+
+                <select name="role">
+
+                    <option>Software Engineer</option>
+                    <option>Data Analyst</option>
+                    <option>AI Engineer</option>
+                    <option>Machine Learning Engineer</option>
+                    <option>Cloud Engineer</option>
+
+                </select>
+
+                <button type="submit">
+                    Analyze Resume
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+<div class="footer">
+    Built with Python, Flask & Gemini AI
+</div>
+</html>
